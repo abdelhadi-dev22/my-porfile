@@ -1,0 +1,54 @@
+/* =================================================
+   SKILLS SPECIFIC STYLES
+   ================================================= */
+.skill-bar-wrap {
+    margin-bottom: 15px;
+}
+.skill-bar-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.skill-bar-bg {
+    height: 6px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-h));
+    border-radius: 3px;
+}
+
+.skill-table-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.skill-table-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-h));
+    border-radius: 3px;
+}
+
+.skill-modal-bar-bg {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.skill-modal-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-h));
+    border-radius: 4px;
+    transition: width .2s;
+}
+
+.badge-blue { background: var(--primary-l); color: var(--primary); }

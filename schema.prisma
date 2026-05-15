@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model AdminUser {
+  id         Int       @id @default(autoincrement())
+  username   String    @unique @db.VarChar(50)
+  password   String    @db.VarChar(255)
+  email      String?   @db.VarChar(100)
+  last_login DateTime? @db.Timestamp(0)
+  created_at DateTime? @default(now()) @db.Timestamp(0)
+
+  @@map("admin_users")
+}
+
+model Profile {
+  id               Int       @id @default(autoincrement())
+  full_name        String?   @default("Abdelhadi Dev") @db.VarChar(100)
+  title            String?   @default("Développeur Web & Logiciels") @db.VarChar(100)
+  title_ar         String?   @default("مطور ويب وبرمجيات") @db.VarChar(100)
+  title_en         String?   @default("Web & Software Developer") @db.VarChar(100)
+  bio              String?   @db.Text
+  bio_ar           String?   @db.Text
+  bio_en           String?   @db.Text
+  about            String?   @db.Text
+  about_ar         String?   @db.Text
+  about_en         String?   @db.Text
+  email            String?   @default("ah3533101@gmail.com") @db.VarChar(100)
+  phone            String?   @default("+213674344470") @db.VarChar(20)
+  whatsapp         String?   @default("+213674344470") @db.VarChar(20)
+  github           String?   @default("https://github.com/abdelhadi-dev22") @db.VarChar(255)
+  profile_image    String?   @db.VarChar(255)
+  resume_pdf       String?   @db.VarChar(255)
+  years_experience Int?      @default(5)
+  projects_done    Int?      @default(50)
+  clients_count    Int?      @default(45)
+  created_at       DateTime? @default(now()) @db.Timestamp(0)
+  updated_at       DateTime? @default(now()) @db.Timestamp(0)
+
+  @@map("profile")
+}
+
+model Project {
+  id             Int       @id @default(autoincrement())
+  title          String    @db.VarChar(255)
+  title_ar       String?   @default("") @db.VarChar(255)
+  title_en       String?   @default("") @db.VarChar(255)
+  description    String?   @db.Text
+  description_ar String?   @db.Text
+  description_en String?   @db.Text
+  category       String?   @default("Web") @db.VarChar(50)
+  technologies   String?   @default("") @db.VarChar(255)
+  image          String?   @db.VarChar(255)
+  gallery_images String?   @db.Text
+  featured       Boolean?  @default(false)
+  display_order  Int?      @default(0)
+  status         String?   @default("active") // Using String for enum since MySQL enum is hard to map without Prisma introspection.
+  created_at     DateTime? @default(now()) @db.Timestamp(0)
+
+  @@map("projects")
+}
+
+model Skill {
+  id            Int     @id @default(autoincrement())
+  skill_name    String  @db.VarChar(100)
+  proficiency   Int?    @default(50)
+  display_order Int?    @default(0)
+
+  @@map("skills")
+}
+
+model ContactMessage {
+  id         Int       @id @default(autoincrement())
+  name       String    @db.VarChar(100)
+  email      String    @db.VarChar(100)
+  phone      String?   @db.VarChar(20)
+  service    String?   @db.VarChar(100)
+  message    String    @db.Text
+  ip_address String?   @db.VarChar(45)
+  status     String?   @default("new")
+  created_at DateTime? @default(now()) @db.Timestamp(0)
+
+  @@map("contact_messages")
+}
