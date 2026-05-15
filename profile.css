@@ -1,0 +1,73 @@
+/* =================================================
+   PROFILE SPECIFIC STYLES
+   ================================================= */
+.trilingual-group { margin-bottom: 1.5rem; }
+.trilingual-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.trilingual-tab { padding: 0.5rem 1rem; border: 1px solid var(--border); background: var(--input-bg); cursor: pointer; border-radius: 0.5rem; }
+.trilingual-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+.trilingual-pane { display: none; }
+.trilingual-pane.active { display: block; }
+.photo-editor { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+.photo-current { position: relative; width: 120px; height: 155px; flex-shrink: 0; }
+.photo-current img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: var(--radius); 
+    border: 3px solid var(--primary); 
+    box-shadow: 0 8px 30px var(--primary-lx); 
+}
+.photo-placeholder { 
+    width: 120px; 
+    height: 155px; 
+    border-radius: var(--radius); 
+    background: linear-gradient(135deg, var(--primary), var(--primary-h)); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 42px; 
+    color: white; 
+    box-shadow: 0 6px 20px var(--primary-lx); 
+}
+.photo-actions { flex: 1; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.form-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
+.required:after { content: " *"; color: var(--primary); }
+.img-remove-btn { 
+    position: absolute; 
+    top: -8px; 
+    right: -8px; 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 24px; 
+    height: 24px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+}
+
+/* Colors overridden for pure blue/white */
+.profile-icon {
+    color: var(--primary);
+}
+.profile-icon-pdf {
+    color: var(--primary);
+    font-size: 32px;
+}
+.profile-cv-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--primary-l);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+.profile-cv-title {
+    font-weight: 600;
+    color: var(--primary);
+}
