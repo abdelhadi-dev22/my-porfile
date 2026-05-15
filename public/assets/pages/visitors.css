@@ -1,0 +1,15 @@
+/* =================================================
+   VISITORS SPECIFIC STYLES
+   ================================================= */
+.stat-card-visits .stat-icon-wrap {
+    background: var(--primary-l);
+    color: var(--primary);
+}
+.stat-card-ips .stat-icon-wrap {
+    background: var(--info-l);
+    color: var(--info);
+}
+.stat-card-recent .stat-icon-wrap {
+    background: var(--warning-l);
+    color: var(--warning);
+}
